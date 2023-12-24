@@ -1,0 +1,14 @@
+[
+    {
+        "username": "admin",
+        "email": "admin@mail.com",
+        "password": "admin",
+        "isAdmin": true,
+        "cards": [
+            "card0",
+            "card1",
+            "card10",
+            "card11"
+        ]
+    }
+]

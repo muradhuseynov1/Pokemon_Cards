@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/src/background.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/src/background.jpg') center center / cover no-repeat fixed;
+    opacity: 0.9; /* Adjust transparency for the background */
+    z-index: -1; /* Ensures the background stays behind the content */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    padding: 10px;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons a:hover {
+    background-color: #0056b3;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pokemon-image {
+    width: 100%;
+    height: auto;
+    background-color: inherit; 
+    border-bottom: 1px solid #ddd;
+}
+
+.pokemon-name {
+    margin-top: 10px;
+}
+
+.pokemon-type {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.pokemon-type img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.pokemon-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.pokemon-stats img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.pokemon-price {
+    background-color: #29ab87; 
+    margin-top: 5px;
+    padding: 5px;
+    width: 105%;
+    text-align: center;
+}
+
+.pokemon-price img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.card-detail {
+    /* Styling for the details page */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+    padding: 20px;
+}
+
+.card-text {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.card-detail img {
+    max-width: 300px;
+    border: 1px solid #000000;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container label,
+.login-container input,
+.login-container button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-container input,
+.login-container button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-container button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.add-card-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.add-card-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-card-container label,
+.add-card-container input,
+.add-card-container textarea,
+.add-card-container button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.add-card-container input,
+.add-card-container textarea,
+.add-card-container button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add-card-container button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.add-card-container button:hover {
+    background-color: #0056b3;
+}
