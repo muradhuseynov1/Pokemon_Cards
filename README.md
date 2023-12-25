@@ -22,21 +22,21 @@ The most serious consequence of a disciplinary offence is dismissal from the uni
 [x] `2.0 points` Admin: Create new card: error handling, successful save (without authentication)
 
 ### The basic tasks (14 points)
-[ ] `0.5 points` Registration form: contains appropriate elements
-[ ] `0.5 points` Registration form: error handling, error message, status maintenance
-[ ] `0.5 points` Registration form: Successful registration
-[ ] `0.5 points` Login: Error handling
-[ ] `0.5 points` Login: Successful login
-[ ] `0.5 points` Logout
-[ ] `0.5 points` Main page: User name and money displayed
-[ ] `0.5 points` Main page: Click on the username to go to the user details page
+[x] `0.5 points` Registration form: contains appropriate elements
+[x] `0.5 points` Registration form: error handling, error message, status maintenance
+[x] `0.5 points` Registration form: Successful registration
+[x] `0.5 points` Login: Error handling
+[x] `0.5 points` Login: Successful login
+[x] `0.5 points` Logout
+[x] `0.5 points` Main page: User name and money displayed
+[x] `0.5 points` Main page: Click on the username to go to the user details page
 [ ] `1.0 point` Main page: Allows you to filter cards by type.
-[ ] `0.5 points` User details: Displays the user's name, email address, money
+[x] `0.5 points` User details: Displays the user's name, email address, money
 [ ] `0.5 points` User details: Cards associated with the user are displayed
 [ ] `2.0 points` User details: a sell button appears next to the user's cards, which allows the user to sell the card, the sold card is deleted from the user's cards and the user receives 90% of the price of the card. The sold card is returned to the ADMIN deck. (Where and how you place the sell button is up to you)
-[ ] `0.5 points` Admin: You can log in with the admin user details
-[ ] `0.5 points` Admin: New card creation is only available with Admin user
-[ ] `0.5 points` Main page: When logged in, a buy button should appear under each card
+[x] `0.5 points` Admin: You can log in with the admin user details
+[x] `0.5 points` Admin: New card creation is only available with Admin user
+[x] `0.5 points` Main page: When logged in, a buy button should appear under each card
 [ ] `1.5 points` Main page (Buy): You can buy the card
 [ ] `0.5 points` Main page (Buy): You can only buy as much as you have
 [ ] `0.5 points` Main page (Buy): You can buy up to 5 cards
