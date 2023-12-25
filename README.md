@@ -13,13 +13,13 @@ The most serious consequence of a disciplinary offence is dismissal from the uni
 
 ### Minimum required (not accepted without them, 6 points)
 [x] `0.0 points` Readme.md file: completed, uploaded
-[ ] `0.0 points` Main page: displayed
-[ ] `1.0 points` Main page: listing of all cards, e.g. with pictures
-[ ] `1.0 points` Main page: click on the name of the card to go to the details page of the corresponding card
-[ ] `1.0 point` Card details: Display the name, HP, description and element of the monster on the card
-[ ] `0.5 points` Card details: The image associated with the card is displayed
-[ ] `0.5 points` Card details: the colour or background colour of one or more elements on the page changes according to the element of the monster on the card, e.g. Fire is red, Lightning is yellow, etc.
-[ ] `2.0 points` Admin: Create new card: error handling, successful save (without authentication)
+[x] `0.0 points` Main page: displayed
+[x] `1.0 points` Main page: listing of all cards, e.g. with pictures
+[x] `1.0 points` Main page: click on the name of the card to go to the details page of the corresponding card
+[x] `1.0 point` Card details: Display the name, HP, description and element of the monster on the card
+[x] `0.5 points` Card details: The image associated with the card is displayed
+[x] `0.5 points` Card details: the colour or background colour of one or more elements on the page changes according to the element of the monster on the card, e.g. Fire is red, Lightning is yellow, etc.
+[x] `2.0 points` Admin: Create new card: error handling, successful save (without authentication)
 
 ### The basic tasks (14 points)
 [ ] `0.5 points` Registration form: contains appropriate elements

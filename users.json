@@ -10,5 +10,13 @@
             "card10",
             "card11"
         ]
+    },
+    {
+        "username": "murov",
+        "email": "murad@mail.com",
+        "password": "aaaaaa",
+        "isAdmin": false,
+        "cards": [],
+        "money": 1000
     }
 ]

@@ -11,15 +11,17 @@ $pokemonCards = json_decode($cardsJson, true);
     <link rel="stylesheet" type="text/css" href="styles.css"> 
 </head>
 <body>
-<header>
+    <header>
         <h1>Pokémon Cards Collection</h1>
         <h2>Explore a variety of Pokémon cards with detailed information and purchase them</h2>
         <div class="header-buttons">
             <?php if (isset($_SESSION['user'])): ?>
                 <?php if ($_SESSION['user']['isAdmin']): ?>
                     <a href="add-card.php">Add Card</a>
+                <?php else: ?>
+                    <span>Vault: $<?= htmlspecialchars($_SESSION['user']['money'] ?? '0') ?></span> <!-- Display money for non-admin users -->
+                    <a href="profile.php"><?= htmlspecialchars($_SESSION['user']['username']) ?></a>
                 <?php endif; ?>
-                <a href="profile.php"><?= htmlspecialchars($_SESSION['user']['username']) ?></a>
                 <a href="logout.php">Logout</a>
             <?php else: ?>
                 <a href="login.php">Login</a>
@@ -78,6 +80,13 @@ $pokemonCards = json_decode($cardsJson, true);
                     <img src="/src/money-sack.png" alt="Price">
                     <span>$<?= htmlspecialchars($card['price']) ?></span>
                 </div>
+                <?php if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin']): ?>
+                    <form action="buy-card.php" method="post">
+                        <input type="hidden" name="cardId" value="<?= htmlspecialchars($card['name']) ?>"> <!-- Assuming each card has a unique 'id' -->
+                        <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($card['price']) ?>">
+                        <button type="submit" name="buy">Buy</button>
+                    </form>
+                <?php endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
