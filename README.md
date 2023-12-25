@@ -30,7 +30,7 @@ The most serious consequence of a disciplinary offence is dismissal from the uni
 [x] `0.5 points` Logout
 [x] `0.5 points` Main page: User name and money displayed
 [x] `0.5 points` Main page: Click on the username to go to the user details page
-[ ] `1.0 point` Main page: Allows you to filter cards by type.
+[x] `1.0 point` Main page: Allows you to filter cards by type.
 [x] `0.5 points` User details: Displays the user's name, email address, money
 [x] `0.5 points` User details: Cards associated with the user are displayed
 [x] `2.0 points` User details: a sell button appears next to the user's cards, which allows the user to sell the card, the sold card is deleted from the user's cards and the user receives 90% of the price of the card. The sold card is returned to the ADMIN deck. (Where and how you place the sell button is up to you)
@@ -39,12 +39,12 @@ The most serious consequence of a disciplinary offence is dismissal from the uni
 [x] `0.5 points` Main page: When logged in, a buy button should appear under each card
 [x] `1.5 points` Main page (Buy): You can buy the card
 [x] `0.5 points` Main page (Buy): You can only buy as much as you have
-[ ] `0.5 points` Main page (Buy): You can buy up to 5 cards
+[x] `0.5 points` Main page (Buy): You can buy up to 5 cards
 [x] `1.0 point` Nice design
 
 ### Extra tasks (at most plus 5 points)
-[ ] `0.5 points` Admin: Card modification: available to admin user for cards not yet sold
-[ ] `0.5 points` Admin: Card modification: error handling, status maintenance, successful save
+[x] `0.5 points` Admin: Card modification: available to admin user for cards not yet sold
+[x] `0.5 points` Admin: Card modification: error handling, status maintenance, successful save
 [ ] `1.0 point` Main page: click on a button on the main page to allow non-admin users to buy a random card with their money, a random card can cost e.g.: 50 coins.
 [ ] `2.0 points` Main page: on the main page only 9 cards should be displayed at a time, underneath them you can navigate through the pages (with page numbers, arrows). Always display cards corresponding to the current page number, each page should display the next 9 cards. To solve this, use AJAX/fetch.
 [ ] `1.0 point` Exchange Step 1: On the main page, for cards that are not in the admin and are in our house, a replacement button should appear, which the user can click to replace any card with this card.

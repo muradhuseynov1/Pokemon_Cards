@@ -13,11 +13,13 @@
             "19": "card0",
             "20": "card4",
             "21": "card5",
-            "22": "card10",
-            "23": "card11",
-            "24": "card12",
-            "25": "card13",
-            "26": "card14"
+            "27": "card3",
+            "28": "card14",
+            "29": "card13",
+            "30": "card12",
+            "31": "card11",
+            "32": "card10",
+            "33":"card6"
         }
     },
     {
@@ -26,7 +28,7 @@
         "password": "aaaaaa",
         "isAdmin": false,
         "cards": [],
-        "money": 870
+        "money": 812.5
     },
     {
         "username": "blabla",

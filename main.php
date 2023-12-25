@@ -93,13 +93,14 @@ $selectedType = $_GET['type'] ?? '';
             }
             ?>
             <div class="card">
+                <!-- Card Image and Details -->
                 <div class="pokemon-image" style="background-color: <?= $bgColor; ?>">
                     <img src="<?= htmlspecialchars($card['image']) ?>" alt="<?= htmlspecialchars($card['name']) ?>">
                 </div>
                 <h2 class="pokemon-name">
-                <a href="card-details.php?type=<?= urlencode($card['type']) ?>&name=<?= urlencode($card['name']) ?>&image=<?= urlencode($card['image']) ?>&hp=<?= urlencode($card['hp']) ?>&attack=<?= urlencode($card['attack']) ?>&defense=<?= urlencode($card['defense']) ?>&price=<?= urlencode($card['price']) ?>&description=<?= urlencode($card['description']) ?>">
-                    <?= htmlspecialchars($card['name']) ?>
-                </a>
+                    <a href="card-details.php?type=<?= urlencode($card['type'] ?? '') ?>&name=<?= urlencode($card['name'] ?? '') ?>&image=<?= urlencode($card['image'] ?? '') ?>&hp=<?= urlencode($card['hp'] ?? '') ?>&attack=<?= urlencode($card['attack'] ?? '') ?>&defense=<?= urlencode($card['defense'] ?? '') ?>&price=<?= urlencode($card['price'] ?? '') ?>&description=<?= urlencode($card['description'] ?? '') ?>">
+                        <?= htmlspecialchars($card['name']) ?>
+                    </a>
                 </h2>
                 <div class="pokemon-type">
                     <img src="/src/tag.png" alt="Type Tag">
@@ -107,34 +108,46 @@ $selectedType = $_GET['type'] ?? '';
                 </div>
                 <div class="pokemon-stats">
                     <img src="/src/heart.png" alt="HP">
-                    <span><?= htmlspecialchars($card['hp']) ?></span>
+                    <span><?= htmlspecialchars($card['hp'] ?? 'N/A') ?></span>
                     <img src="/src/swords.png" alt="Attack">
-                    <span><?= htmlspecialchars($card['attack']) ?></span>
+                    <span><?= htmlspecialchars($card['attack'] ?? 'N/A') ?></span>
                     <img src="/src/shield.png" alt="Defense">
-                    <span><?= htmlspecialchars($card['defense']) ?></span>
+                    <span><?= htmlspecialchars($card['defense'] ?? 'N/A') ?></span>
                 </div>
                 <div class="pokemon-price">
                     <img src="/src/money-sack.png" alt="Price">
-                    <span>$<?= htmlspecialchars($card['price']) ?></span>
+                    <span>$<?= htmlspecialchars($card['price'] ?? '0') ?></span>
                 </div>
-                <?php 
-                $alreadyPurchased = false;
-                foreach ($users as $user) {
-                    if (!$user['isAdmin'] && in_array($cardId, $user['cards'])) {
-                        $alreadyPurchased = true;
-                        break;
-                    }
-                }
 
-                if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin'] && !$alreadyPurchased): ?>
-                    <form action="buy-card.php" method="post">
-                        <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
-                        <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($card['price']) ?>">
-                        <button type="submit" name="buy">Buy</button>
-                    </form>
-                <?php elseif ($alreadyPurchased): ?>
-                    <p>Card already purchased</p>
-                <?php endif; ?>
+                <!-- Action Buttons -->
+                <div class="card-actions">
+                    <?php 
+                    $alreadyPurchased = false;
+                    foreach ($users as $user) {
+                        if (!$user['isAdmin'] && in_array($cardId, $user['cards'])) {
+                            $alreadyPurchased = true;
+                            break;
+                        }
+                    }
+
+                    if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin'] && !$alreadyPurchased): ?>
+                        <form action="buy-card.php" method="post" class="card-action-form">
+                            <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
+                            <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($card['price']) ?>">
+                            <button type="submit" name="buy" class="buy-button">Buy</button>
+                        </form>
+                    <?php elseif ($alreadyPurchased): ?>
+                        <p class="card-already-purchased">Card already purchased</p>
+                    <?php endif; ?>
+
+                    <?php 
+                    if (isset($_SESSION['user']['isAdmin']) && $_SESSION['user']['isAdmin'] && isset($users[0]['cards']) && in_array($cardId, $users[0]['cards'])): ?>
+                        <form action="modify-card.php" method="get" class="card-action-form">
+                            <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
+                            <button type="submit" name="modify" class="modify-button">Modify</button>
+                        </form>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

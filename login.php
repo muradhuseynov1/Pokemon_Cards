@@ -47,6 +47,7 @@ if (isset($_POST['login'])) {
 
             <button type="submit" name="login">Login</button>
         </form>
+        <a href="main.php" class="cancel-button">Cancel</a>
     </div>
 </body>
 </html>

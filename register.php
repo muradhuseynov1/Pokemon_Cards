@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">Register</button>
         </form>
+        <a href="main.php" class="cancel-button">Cancel</a>
     </div>
 </body>
 </html>

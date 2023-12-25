@@ -44,6 +44,9 @@ $pokemonCards = json_decode($cardsJson, true);
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
+        <form action="main.php" method="get">
+            <button type="submit" class="cancel-button">Cancel</button>
+        </form>
     </div>
 </body>
 </html>

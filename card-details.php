@@ -52,5 +52,8 @@ switch(strtolower($type)) {
         </div>
         <img src="<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($name) ?>">
     </div>
+    <form action="main.php" method="get">
+            <button type="submit" class="cancel-button">Cancel</button>
+    </form>
 </body>
 </html>

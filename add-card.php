@@ -98,6 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="url" id="image" name="image" required>
 
             <button type="submit">Add Card</button>
+            <a href="main.php" class="cancel-button">Cancel</a>
         </form>
     </div>
 </body>
