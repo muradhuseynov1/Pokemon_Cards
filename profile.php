@@ -33,7 +33,6 @@ $pokemonCards = json_decode($cardsJson, true);
                             <h3><?= htmlspecialchars($pokemonCards[$cardId]['name']) ?></h3>
                             <p>Type: <?= htmlspecialchars($pokemonCards[$cardId]['type']) ?></p>
                             <p>HP: <?= htmlspecialchars($pokemonCards[$cardId]['hp']) ?></p>
-                            <!-- Add more details as needed -->
                         </a>
                         <form action="sell-card.php" method="post">
                             <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">

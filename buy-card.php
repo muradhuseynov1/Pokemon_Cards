@@ -17,10 +17,8 @@ error_log("Received cardId: $cardId, cardPrice: $cardPrice, userId: $userId");
 
 $users = json_decode(file_get_contents('users.json'), true);
 
-// Additional debugging: Print users array
 error_log("Users before transaction: " . print_r($users, true));
 
-// Check if the card is already purchased by a non-admin user
 foreach ($users as $user) {
     if (!$user['isAdmin'] && in_array($cardId, $user['cards'])) {
         $_SESSION['error_message'] = "Card already purchased.";
@@ -30,9 +28,6 @@ foreach ($users as $user) {
     }
 }
 
-// ... [Previous code and initial debug logs] ...
-
-// Log the transaction process
 foreach ($users as &$user) {
     if ($user['username'] === $userId && !$user['isAdmin']) {
         if (count($user['cards']) >= 5) {
@@ -55,10 +50,8 @@ foreach ($users as &$user) {
     }
 }
 
-// Log the updated users array
 error_log("Users after transaction: " . print_r($users, true));
 
-// Remove the card from the admin's list and log this action
 foreach ($users as &$adminUser) {
     if ($adminUser['isAdmin']) {
         if (($key = array_search($cardId, $adminUser['cards'])) !== false) {
@@ -69,7 +62,6 @@ foreach ($users as &$adminUser) {
     }
 }
 
-// Attempt to save the updated user data and log the action
 if (file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT))) {
     error_log("Users data updated successfully.");
 } else {

@@ -10,7 +10,6 @@ $errorMessage = '';
 $successMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Collect and validate input
     $name = trim($_POST['name']);
     $type = trim($_POST['type']);
     $hp = trim($_POST['hp']);
@@ -23,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$name || !$type || !is_numeric($hp) || !is_numeric($attack) || !is_numeric($defense) || !is_numeric($price) || !$description || !$image) {
         $errorMessage = 'Please fill in all fields correctly.';
     } else {
-        // Update cards.json
         $cards = json_decode(file_get_contents('cards.json'), true);
         $newCardId = 'card' . count($cards);
         $cards[$newCardId] = [
@@ -38,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
         file_put_contents('cards.json', json_encode($cards, JSON_PRETTY_PRINT));
 
-        // Update users.json
         $users = json_decode(file_get_contents('users.json'), true);
         foreach ($users as &$user) {
             if ($user['username'] === $_SESSION['user']['username']) {
@@ -48,8 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT));
 
-        // Redirect or display success message
-        header('Location: main.php'); // Redirect to main page or display a success message
+        header('Location: main.php'); 
         exit();
     }
 }

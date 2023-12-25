@@ -8,7 +8,6 @@ $attack = $_GET['attack'] ?? 'Unknown';
 $defense = $_GET['defense'] ?? 'Unknown';
 $price = $_GET['price'] ?? 'Unknown';
 
-// Determine background color based on type
 $bgColor = '';
 switch(strtolower($type)) {
     case 'normal': $bgColor = '#A8A77A'; break;
@@ -29,8 +28,8 @@ switch(strtolower($type)) {
     case 'dark': $bgColor = '#705746'; break;
     case 'steel': $bgColor = '#B7B7CE'; break;
     case 'fairy': $bgColor = '#D685AD'; break;
-    case 'stellar': $bgColor = '#7CC7B2'; break; // Stellar type color
-    default: $bgColor = '#FFFFFF'; break; // Default background color
+    case 'stellar': $bgColor = '#7CC7B2'; break; 
+    default: $bgColor = '#FFFFFF'; break; 
 }
 ?>
 <!DOCTYPE html>

@@ -13,16 +13,16 @@ body::before {
     right: 0;
     bottom: 0;
     background: url('/src/background.jpg') center center / cover no-repeat fixed;
-    opacity: 0.9; /* Adjust transparency for the background */
-    z-index: -1; /* Ensures the background stays behind the content */
+    opacity: 0.9; 
+    z-index: -1; 
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    background-color: rgba(255, 255, 255, 0.8); 
     padding: 10px;
-    border-radius: 10px; /* Optional: adds rounded corners */
+    border-radius: 10px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,7 +123,6 @@ header {
 }
 
 .card-detail {
-    /* Styling for the details page */
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -340,5 +339,3 @@ header {
 .modify-card-container button:hover {
     background-color: #0056b3;
 }
-
-

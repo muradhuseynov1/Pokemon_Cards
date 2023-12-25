@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Load the JSON file containing the Pokémon cards
+
 $cardsJson = file_get_contents('cards.json');
 $pokemonCards = json_decode($cardsJson, true);
 
@@ -24,7 +24,7 @@ $selectedType = $_GET['type'] ?? '';
                 <?php if ($_SESSION['user']['isAdmin']): ?>
                     <a href="add-card.php">Add Card</a>
                 <?php else: ?>
-                    <span>Vault: $<?= htmlspecialchars($_SESSION['user']['money'] ?? '0') ?> |</span> <!-- Display money for non-admin users -->
+                    <span>Vault: $<?= htmlspecialchars($_SESSION['user']['money'] ?? '0') ?> |</span> 
                     <span>| Cards: <?= count($_SESSION['user']['cards']) ?></span>
                     <a href="profile.php"><?= htmlspecialchars($_SESSION['user']['username']) ?></a>
                 <?php endif; ?>
@@ -35,7 +35,6 @@ $selectedType = $_GET['type'] ?? '';
             <?php endif; ?>
         </div>
     </header>
-    <!-- Dropdown form for filtering by type -->
     <form action="main.php" method="get">
         <select name="type">
             <option value="">All Types</option>
@@ -89,11 +88,10 @@ $selectedType = $_GET['type'] ?? '';
                 case 'dark': $bgColor = '#705746'; break;
                 case 'steel': $bgColor = '#B7B7CE'; break;
                 case 'fairy': $bgColor = '#D685AD'; break;
-                case 'stellar': $bgColor = '#7CC7B2'; break; // Stellar type color
+                case 'stellar': $bgColor = '#7CC7B2'; break; 
             }
             ?>
             <div class="card">
-                <!-- Card Image and Details -->
                 <div class="pokemon-image" style="background-color: <?= $bgColor; ?>">
                     <img src="<?= htmlspecialchars($card['image']) ?>" alt="<?= htmlspecialchars($card['name']) ?>">
                 </div>
@@ -118,8 +116,6 @@ $selectedType = $_GET['type'] ?? '';
                     <img src="/src/money-sack.png" alt="Price">
                     <span>$<?= htmlspecialchars($card['price'] ?? '0') ?></span>
                 </div>
-
-                <!-- Action Buttons -->
                 <div class="card-actions">
                     <?php 
                     $alreadyPurchased = false;

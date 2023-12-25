@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Access control: Only allow admin users
 if (!isset($_SESSION['user']) || !$_SESSION['user']['isAdmin']) {
     header('Location: main.php');
     exit();
@@ -10,12 +9,9 @@ if (!isset($_SESSION['user']) || !$_SESSION['user']['isAdmin']) {
 $cardId = $_GET['cardId'] ?? null;
 $cardsJson = file_get_contents('cards.json');
 $cards = json_decode($cardsJson, true);
-
-// Find the card to be modified
 $cardToModify = $cards[$cardId] ?? null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Process the form submission
     $name = $_POST['name'] ?? '';
     $type = $_POST['type'] ?? '';
     $hp = $_POST['hp'] ?? '0';
@@ -25,9 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'] ?? '';
     $image = $_POST['image'] ?? '';
 
-    // Validate inputs
     if ($name && $type) {
-        // Update card details
         $cards[$cardId] = [
             'name' => $name,
             'type' => $type,
@@ -39,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'image' => $image
         ];
 
-        // Save the updated cards
         if (file_put_contents('cards.json', json_encode($cards))) {
             $successMessage = "Card updated successfully!";
             header('Location: main.php');

@@ -7,21 +7,18 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Read users.json
     $users = json_decode(file_get_contents('users.json'), true);
     $loginSuccessful = false;
 
-    // Check credentials
     foreach ($users as $user) {
         if ($user['username'] === $username && $password === $user['password']) {
-        // if ($user['username'] === $username && password_verify($password, $user['password']))
+        // if ($user['username'] === $username && password_verify($password, $user['password'])), passwords are not hashed for simplicity
             $_SESSION['user'] = $user;
             header('Location: main.php');
             exit();
         }
     }
 
-    // If the loop completes without logging in, credentials are invalid
     $errorMessage = "Invalid username or password.";
 }
 ?>
