@@ -5,17 +5,19 @@
         "password": "admin",
         "isAdmin": true,
         "cards": {
-            "2": "card2",
-            "4": "card4",
-            "5": "card5",
-            "6": "card6",
             "7": "card7",
             "8": "card8",
-            "10": "card10",
-            "11": "card11",
-            "12": "card0",
-            "13": "card1",
-            "14": "card9"
+            "14": "card9",
+            "15": "card2",
+            "18": "card1",
+            "19": "card0",
+            "20": "card4",
+            "21": "card5",
+            "22": "card10",
+            "23": "card11",
+            "24": "card12",
+            "25": "card13",
+            "26": "card14"
         }
     },
     {
@@ -24,7 +26,7 @@
         "password": "aaaaaa",
         "isAdmin": false,
         "cards": [],
-        "money": 901.8
+        "money": 870
     },
     {
         "username": "blabla",
@@ -32,6 +34,6 @@
         "password": "123456",
         "isAdmin": false,
         "cards": [],
-        "money": 1000
+        "money": 821.1
     }
 ]

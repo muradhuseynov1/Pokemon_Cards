@@ -35,6 +35,11 @@ foreach ($users as $user) {
 // Log the transaction process
 foreach ($users as &$user) {
     if ($user['username'] === $userId && !$user['isAdmin']) {
+        if (count($user['cards']) >= 5) {
+            $_SESSION['error_message'] = "You cannot have more than 5 cards.";
+            header('Location: main.php');
+            exit();
+        }
         if ($user['money'] >= $cardPrice) {
             if (!in_array($cardId, $user['cards'])) {
                 $user['money'] -= $cardPrice;
@@ -71,5 +76,6 @@ if (file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT))) {
     error_log("Failed to update users.json");
 }
 
+$_SESSION['user'] = $user;
 header('Location: main.php');
 exit();

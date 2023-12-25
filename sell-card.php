@@ -35,6 +35,7 @@ foreach ($users as &$adminUser) {
 // Save the updated users data
 file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT));
 
+$_SESSION['user'] = $user;
 header('Location: profile.php');
 exit();
 ?>

@@ -33,7 +33,7 @@ The most serious consequence of a disciplinary offence is dismissal from the uni
 [ ] `1.0 point` Main page: Allows you to filter cards by type.
 [x] `0.5 points` User details: Displays the user's name, email address, money
 [x] `0.5 points` User details: Cards associated with the user are displayed
-[ ] `2.0 points` User details: a sell button appears next to the user's cards, which allows the user to sell the card, the sold card is deleted from the user's cards and the user receives 90% of the price of the card. The sold card is returned to the ADMIN deck. (Where and how you place the sell button is up to you)
+[x] `2.0 points` User details: a sell button appears next to the user's cards, which allows the user to sell the card, the sold card is deleted from the user's cards and the user receives 90% of the price of the card. The sold card is returned to the ADMIN deck. (Where and how you place the sell button is up to you)
 [x] `0.5 points` Admin: You can log in with the admin user details
 [x] `0.5 points` Admin: New card creation is only available with Admin user
 [x] `0.5 points` Main page: When logged in, a buy button should appear under each card

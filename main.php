@@ -22,7 +22,8 @@ $users = json_decode($usersJson, true);
                 <?php if ($_SESSION['user']['isAdmin']): ?>
                     <a href="add-card.php">Add Card</a>
                 <?php else: ?>
-                    <span>Vault: $<?= htmlspecialchars($_SESSION['user']['money'] ?? '0') ?></span> <!-- Display money for non-admin users -->
+                    <span>Vault: $<?= htmlspecialchars($_SESSION['user']['money'] ?? '0') ?> |</span> <!-- Display money for non-admin users -->
+                    <span>| Cards: <?= count($_SESSION['user']['cards']) ?></span>
                     <a href="profile.php"><?= htmlspecialchars($_SESSION['user']['username']) ?></a>
                 <?php endif; ?>
                 <a href="logout.php">Logout</a>
