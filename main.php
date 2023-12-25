@@ -3,6 +3,9 @@ session_start();
 // Load the JSON file containing the Pokémon cards
 $cardsJson = file_get_contents('cards.json');
 $pokemonCards = json_decode($cardsJson, true);
+
+$usersJson = file_get_contents('users.json');
+$users = json_decode($usersJson, true);
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +33,7 @@ $pokemonCards = json_decode($cardsJson, true);
         </div>
     </header>
     <div class="card-container">
-        <?php foreach ($pokemonCards as $card): ?>
+        <?php foreach ($pokemonCards as $cardId => $card): ?>
             <?php
             $bgColor = '';
             switch($card['type']) {
@@ -80,12 +83,23 @@ $pokemonCards = json_decode($cardsJson, true);
                     <img src="/src/money-sack.png" alt="Price">
                     <span>$<?= htmlspecialchars($card['price']) ?></span>
                 </div>
-                <?php if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin']): ?>
+                <?php 
+                $alreadyPurchased = false;
+                foreach ($users as $user) {
+                    if (!$user['isAdmin'] && in_array($cardId, $user['cards'])) {
+                        $alreadyPurchased = true;
+                        break;
+                    }
+                }
+
+                if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin'] && !$alreadyPurchased): ?>
                     <form action="buy-card.php" method="post">
-                        <input type="hidden" name="cardId" value="<?= htmlspecialchars($card['name']) ?>"> <!-- Assuming each card has a unique 'id' -->
+                        <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
                         <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($card['price']) ?>">
                         <button type="submit" name="buy">Buy</button>
                     </form>
+                <?php elseif ($alreadyPurchased): ?>
+                    <p>Card already purchased</p>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

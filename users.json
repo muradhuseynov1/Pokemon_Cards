@@ -4,19 +4,28 @@
         "email": "admin@mail.com",
         "password": "admin",
         "isAdmin": true,
-        "cards": [
-            "card0",
-            "card1",
-            "card10",
-            "card11"
-        ]
+        "cards": {
+            "2": "card2",
+            "3": "card3",
+            "4": "card4",
+            "5": "card5",
+            "6": "card6",
+            "7": "card7",
+            "8": "card8",
+            "9": "card9",
+            "10": "card10",
+            "11": "card11"
+        }
     },
     {
         "username": "murov",
         "email": "murad@mail.com",
         "password": "aaaaaa",
         "isAdmin": false,
-        "cards": [],
-        "money": 1000
+        "cards": [
+            "card0",
+            "card1"
+        ],
+        "money": 306
     }
 ]
