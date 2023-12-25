@@ -6,6 +6,8 @@ $pokemonCards = json_decode($cardsJson, true);
 
 $usersJson = file_get_contents('users.json');
 $users = json_decode($usersJson, true);
+
+$selectedType = $_GET['type'] ?? '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,8 +35,39 @@ $users = json_decode($usersJson, true);
             <?php endif; ?>
         </div>
     </header>
+    <!-- Dropdown form for filtering by type -->
+    <form action="main.php" method="get">
+        <select name="type">
+            <option value="">All Types</option>
+            <option value="normal" <?= $selectedType == 'normal' ? 'selected' : '' ?>>Normal</option>
+            <option value="fire" <?= $selectedType == 'fire' ? 'selected' : '' ?>>Fire</option>
+            <option value="water" <?= $selectedType == 'water' ? 'selected' : '' ?>>Water</option>
+            <option value="electric" <?= $selectedType == 'electric' ? 'selected' : '' ?>>Electric</option>
+            <option value="grass" <?= $selectedType == 'grass' ? 'selected' : '' ?>>Grass</option>
+            <option value="ice" <?= $selectedType == 'ice' ? 'selected' : '' ?>>Ice</option>
+            <option value="fighting" <?= $selectedType == 'fighting' ? 'selected' : '' ?>>Fighting</option>
+            <option value="poison" <?= $selectedType == 'poison' ? 'selected' : '' ?>>Poison</option>
+            <option value="ground" <?= $selectedType == 'ground' ? 'selected' : '' ?>>Ground</option>
+            <option value="flying" <?= $selectedType == 'flying' ? 'selected' : '' ?>>Flying</option>
+            <option value="psychic" <?= $selectedType == 'psychic' ? 'selected' : '' ?>>Psychic</option>
+            <option value="bug" <?= $selectedType == 'bug' ? 'selected' : '' ?>>Bug</option>
+            <option value="rock" <?= $selectedType == 'rock' ? 'selected' : '' ?>>Rock</option>
+            <option value="ghost" <?= $selectedType == 'ghost' ? 'selected' : '' ?>>Ghost</option>
+            <option value="dragon" <?= $selectedType == 'dragon' ? 'selected' : '' ?>>Dragon</option>
+            <option value="dark" <?= $selectedType == 'dark' ? 'selected' : '' ?>>Dark</option>
+            <option value="steel" <?= $selectedType == 'steel' ? 'selected' : '' ?>>Steel</option>
+            <option value="fairy" <?= $selectedType == 'fairy' ? 'selected' : '' ?>>Fairy</option>
+            <option value="stellar" <?= $selectedType == 'stellar' ? 'selected' : '' ?>>Stellar</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
     <div class="card-container">
         <?php foreach ($pokemonCards as $cardId => $card): ?>
+            <?php 
+                if ($selectedType && $card['type'] !== $selectedType) {
+                    continue; 
+                }
+            ?>
             <?php
             $bgColor = '';
             switch($card['type']) {
