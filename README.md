@@ -62,8 +62,4 @@ The task is to create a server-side application written in PHP, in which users c
       - User's password
       - Is admin?
       - (possibly the User's cards)
-<<<<<<< HEAD
 - You can find all Pokémon cards are on this page, for inspiration: https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/
-=======
-- You can find all Pokémon cards are on this page, for inspiration: https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/
->>>>>>> 0afeb02663ce1383b5982e6f746da16d798efd98
