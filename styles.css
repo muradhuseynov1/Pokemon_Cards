@@ -26,6 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid #FFCB05;
 }
 
 .header-buttons {
@@ -37,7 +38,7 @@ header {
     display: inline-block;
     margin: 0 10px;
     padding: 8px 15px;
-    background-color: #007bff;
+    background-color: #C00000;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -45,7 +46,7 @@ header {
 }
 
 .header-buttons a:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .card-container {
@@ -55,7 +56,7 @@ header {
 }
 
 .card {
-    border: 1px solid #ddd;
+    border: 2px solid #F08030;
     margin: 10px;
     padding: 10px;
     width: 200px;
@@ -109,7 +110,7 @@ header {
 }
 
 .pokemon-price {
-    background-color: #29ab87; 
+    background-color: #6890F0; 
     margin-top: 5px;
     padding: 5px;
     width: 105%;
@@ -149,7 +150,7 @@ header {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #78C850;
     border-radius: 10px;
     background-color: white;
 }
@@ -175,13 +176,13 @@ header {
 }
 
 .login-container button {
-    background-color: #007bff;
+    background-color: #C00000;
     color: white;
     cursor: pointer;
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .error-message {
@@ -193,7 +194,7 @@ header {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #78C850;
     border-radius: 10px;
     background-color: white;
 }
@@ -221,20 +222,20 @@ header {
 }
 
 .add-card-container button {
-    background-color: #007bff;
+    background-color: #C00000;
     color: white;
     cursor: pointer;
 }
 
 .add-card-container button:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .register-container {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #78C850;
     border-radius: 10px;
     background-color: white;
 }
@@ -260,13 +261,13 @@ header {
 }
 
 .register-container button {
-    background-color: #007bff;
+    background-color: #C00000;
     color: white;
     cursor: pointer;
 }
 
 .register-container button:hover {
-    background-color: #0056b3;
+    background-color: black;
 }
 
 .profile-container {
@@ -274,7 +275,7 @@ header {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
+    background-color: #A890F0;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -287,7 +288,7 @@ header {
 .profile-container p {
     font-size: 16px;
     line-height: 1.6;
-    color: #666;
+    color: black;
 }
 
 .profile-container h2 {
@@ -330,12 +331,12 @@ header {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #C00000;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .modify-card-container button:hover {
-    background-color: #0056b3;
+    background-color: black;
 }

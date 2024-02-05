@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="success"><?= htmlspecialchars($successMessage) ?></p>
         <?php endif; ?>
 
-        <form action="modify-card.php?cardId=<?= htmlspecialchars($cardId) ?>" method="post">
+        <form action="modify-card.php?cardId=<?= htmlspecialchars($cardId) ?>" method="post" novalidate>
             <h1>Modify Card</h1>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="<?= htmlspecialchars($cardToModify['name'] ?? '') ?>">

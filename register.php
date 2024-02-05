@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="error-message"><?= htmlspecialchars($errorMessage) ?></p>
         <?php endif; ?>
 
-        <form action="register.php" method="post">
+        <form action="register.php" method="post" novalidate>
             <h2>Register</h2>
 
             <label for="username">Username:</label>

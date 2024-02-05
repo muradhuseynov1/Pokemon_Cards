@@ -1,12 +1,12 @@
 <?php
-$type = $_GET['type'] ?? 'Unknown';
-$name = $_GET['name'] ?? 'Unknown';
-$image = $_GET['image'] ?? 'default.png';
-$hp = $_GET['hp'] ?? 'Unknown';
-$description = $_GET['description'] ?? 'No description available';
-$attack = $_GET['attack'] ?? 'Unknown';
-$defense = $_GET['defense'] ?? 'Unknown';
-$price = $_GET['price'] ?? 'Unknown';
+$type = $_GET['type'] ?? '';
+$name = $_GET['name'] ?? '';
+$image = $_GET['image'] ?? '';
+$hp = $_GET['hp'] ?? '';
+$description = $_GET['description'] ?? '';
+$attack = $_GET['attack'] ?? '';
+$defense = $_GET['defense'] ?? '';
+$price = $_GET['price'] ?? '';
 
 $bgColor = '';
 switch(strtolower($type)) {
@@ -51,7 +51,7 @@ switch(strtolower($type)) {
         </div>
         <img src="<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($name) ?>">
     </div>
-    <form action="main.php" method="get">
+    <form action="main.php" method="get" novalidate>
             <button type="submit" class="cancel-button">Cancel</button>
     </form>
 </body>

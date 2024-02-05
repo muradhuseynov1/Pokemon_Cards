@@ -17,8 +17,8 @@ $selectedType = $_GET['type'] ?? '';
 </head>
 <body>
     <header>
-        <h1>Pokémon Cards Collection</h1>
-        <h2>Explore a variety of Pokémon cards with detailed information and purchase them</h2>
+        <h3>Pokémon Cards Collection</h3>
+        <h4>Explore a variety of Pokémon cards with detailed information and purchase them</h4>
         <div class="header-buttons">
             <?php if (isset($_SESSION['user'])): ?>
                 <?php if ($_SESSION['user']['isAdmin']): ?>
@@ -35,7 +35,7 @@ $selectedType = $_GET['type'] ?? '';
             <?php endif; ?>
         </div>
     </header>
-    <form action="main.php" method="get">
+    <form action="main.php" method="get" novalidate>
         <select name="type">
             <option value="">All Types</option>
             <option value="normal" <?= $selectedType == 'normal' ? 'selected' : '' ?>>Normal</option>
@@ -127,7 +127,7 @@ $selectedType = $_GET['type'] ?? '';
                     }
 
                     if (isset($_SESSION['user']) && !$_SESSION['user']['isAdmin'] && !$alreadyPurchased): ?>
-                        <form action="buy-card.php" method="post" class="card-action-form">
+                        <form action="buy-card.php" method="post" class="card-action-form" novalidate>
                             <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
                             <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($card['price']) ?>">
                             <button type="submit" name="buy" class="buy-button">Buy</button>
@@ -138,7 +138,7 @@ $selectedType = $_GET['type'] ?? '';
 
                     <?php 
                     if (isset($_SESSION['user']['isAdmin']) && $_SESSION['user']['isAdmin'] && isset($users[0]['cards']) && in_array($cardId, $users[0]['cards'])): ?>
-                        <form action="modify-card.php" method="get" class="card-action-form">
+                        <form action="modify-card.php" method="get" class="card-action-form" novalidate>
                             <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
                             <button type="submit" name="modify" class="modify-button">Modify</button>
                         </form>

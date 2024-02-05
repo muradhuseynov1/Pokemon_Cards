@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="success-message"><?= htmlspecialchars($successMessage) ?></p>
         <?php endif; ?>
 
-        <form action="add-card.php" method="post">
+        <form action="add-card.php" method="post" novalidate>
             <h2>Add New Card</h2>
 
             <label for="name">Name:</label>

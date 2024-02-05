@@ -34,7 +34,7 @@ $pokemonCards = json_decode($cardsJson, true);
                             <p>Type: <?= htmlspecialchars($pokemonCards[$cardId]['type']) ?></p>
                             <p>HP: <?= htmlspecialchars($pokemonCards[$cardId]['hp']) ?></p>
                         </a>
-                        <form action="sell-card.php" method="post">
+                        <form action="sell-card.php" method="post" novalidate>
                             <input type="hidden" name="cardId" value="<?= htmlspecialchars($cardId) ?>">
                             <input type="hidden" name="cardPrice" value="<?= htmlspecialchars($pokemonCards[$cardId]['price']) ?>">
                             <button type="submit" name="sell">Sell</button>
@@ -43,7 +43,7 @@ $pokemonCards = json_decode($cardsJson, true);
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
-        <form action="main.php" method="get">
+        <form action="main.php" method="get" novalidate>
             <button type="submit" class="cancel-button">Cancel</button>
         </form>
     </div>

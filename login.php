@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 </head>
 <body>
     <div class="login-container">
-        <form action="login.php" method="post">
+        <form action="login.php" method="post" novalidate>
             <h2>Login</h2>
             <?php if ($errorMessage): ?>
                 <p class="error-message"><?= htmlspecialchars($errorMessage) ?></p>

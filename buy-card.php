@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-error_log('buy-card.php accessed.');
-
 if (!isset($_SESSION['user']) || $_SESSION['user']['isAdmin'] || !isset($_POST['buy'])) {
     error_log('Redirecting to main.php - User not set or is admin, or buy not set in POST.');
     header('Location: main.php');
@@ -13,11 +11,7 @@ $cardId = $_POST['cardId'];
 $cardPrice = $_POST['cardPrice'];
 $userId = $_SESSION['user']['username'];
 
-error_log("Received cardId: $cardId, cardPrice: $cardPrice, userId: $userId");
-
 $users = json_decode(file_get_contents('users.json'), true);
-
-error_log("Users before transaction: " . print_r($users, true));
 
 foreach ($users as $user) {
     if (!$user['isAdmin'] && in_array($cardId, $user['cards'])) {
@@ -49,8 +43,6 @@ foreach ($users as &$user) {
         break;
     }
 }
-
-error_log("Users after transaction: " . print_r($users, true));
 
 foreach ($users as &$adminUser) {
     if ($adminUser['isAdmin']) {
